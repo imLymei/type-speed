@@ -11,7 +11,7 @@ export default function LettersScreen() {
 
 	return (
 		<div className='flex flex-col gap-2 w-[60vw]'>
-			<div className='flex flex-wrap gap-y-5 text-2xl'>
+			<div className='flex flex-wrap text-2xl gap-y-5'>
 				{typeControl?.letters.map((letter, index) => {
 					const isSpace = letter === ' ' || typeControl.letters.length - 1 === index;
 
@@ -24,7 +24,7 @@ export default function LettersScreen() {
 						return (
 							<div
 								key={`prase ${index}`}
-								className={cn('flex rounded-md', {
+								className={cn('flex rounded-md py-2', {
 									'border-t border-white':
 										typeControl.typedLetters.length >= actualPrase[0].index &&
 										typeControl.typedLetters.length <= actualPrase[actualPrase.length - 1].index,
