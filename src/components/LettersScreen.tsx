@@ -4,11 +4,11 @@ import cn from '@/utils/cn';
 import { TypeContext } from '@/utils/contexts';
 import { useContext, useEffect, useRef, useState } from 'react';
 import LetterCard from './letterScreen/LetterCard';
-import { useWindowSize } from '@/hooks/useWindoSize';
+import { useWindowSize } from '@imlymei/utils';
 
 export default function LettersScreen() {
 	const [diference, setDiference] = useState(0);
-	const windowSize = useWindowSize();
+	const windowSize = useWindowSize;
 
 	const typeControl = useContext(TypeContext);
 
