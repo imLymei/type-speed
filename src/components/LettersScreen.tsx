@@ -4,9 +4,11 @@ import cn from '@/utils/cn';
 import { TypeContext } from '@/utils/contexts';
 import { useContext, useEffect, useRef, useState } from 'react';
 import LetterCard from './letterScreen/LetterCard';
+import { useWindowSize } from '@/hooks/useWindoSize';
 
 export default function LettersScreen() {
 	const [diference, setDiference] = useState(0);
+	const windowSize = useWindowSize();
 
 	const typeControl = useContext(TypeContext);
 
@@ -20,7 +22,7 @@ export default function LettersScreen() {
 		if (mainComponent && selectedComponent) {
 			setDiference(mainComponent.y - selectedComponent.y);
 		}
-	}, [typeControl]);
+	}, [typeControl, windowSize]);
 
 	return (
 		<>
