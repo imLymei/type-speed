@@ -19,15 +19,20 @@ export default function TypeProvider({ children }: { children: React.ReactNode }
 		return [...newData];
 	}
 
+	function clearTypedLetters() {
+		setTypedLetters([]);
+	}
+
 	const [letters, setLetters] = useState<string[]>(newGenerate(20));
 
 	const typeControl: TypeControl = {
 		letters: letters,
 		setLetters: (number?: number) => {
-			setLetters(newGenerate(20));
-			setTypedLetters([]);
+			setLetters(newGenerate(number ?? 20));
+			clearTypedLetters();
 		},
 		typedLetters: typedLetters,
+		clearTypedLetters: clearTypedLetters,
 	};
 
 	return <TypeContext.Provider value={typeControl}>{children}</TypeContext.Provider>;

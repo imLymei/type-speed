@@ -22,6 +22,11 @@ export default function LettersScreen() {
 		if (mainComponent && selectedComponent) {
 			setDiference(mainComponent.y - selectedComponent.y);
 		}
+
+		if (typeControl?.letters.length === typeControl?.typedLetters.length) {
+			typeControl?.setLetters(20);
+			typeControl?.clearTypedLetters();
+		}
 	}, [typeControl, windowSize]);
 
 	return (
@@ -62,7 +67,7 @@ export default function LettersScreen() {
 			</div>
 			<button
 				onClick={(event) => {
-					typeControl?.setLetters(2);
+					typeControl?.setLetters(20);
 					event.currentTarget.blur();
 				}}
 				className='py-2 px-6 border border-white rounded-md hover:bg-white/20 active:bg-white/10 transition-colors select-none'>
