@@ -23,40 +23,49 @@ export default function LettersScreen() {
 	}, [typeControl]);
 
 	return (
-		<div className='flex flex-col gap-2 lg:w-[60vw] h-[400px] overflow-hidden'>
-			<div
-				className='flex flex-wrap text-2xl gap-y-5 transition-all'
-				ref={main}
-				style={{ transform: `translate(0px, ${diference}px)` }}>
-				{typeControl?.letters.map((letter, index) => {
-					const isSpace = letter === ' ' || typeControl.letters.length - 1 === index;
+		<>
+			<div className='flex flex-col gap-2 lg:w-[60vw] h-[400px] overflow-hidden'>
+				<div
+					className='flex flex-wrap text-2xl gap-y-5 transition-all'
+					ref={main}
+					style={{ transform: `translate(0px, ${diference}px)` }}>
+					{typeControl?.letters.map((letter, index) => {
+						const isSpace = letter === ' ' || typeControl.letters.length - 1 === index;
 
-					prase.current.push({ letter, index });
+						prase.current.push({ letter, index });
 
-					if (isSpace) {
-						const actualPrase = prase.current;
-						prase.current = [];
+						if (isSpace) {
+							const actualPrase = prase.current;
+							prase.current = [];
 
-						const isSelected =
-							typeControl.typedLetters.length >= actualPrase[0].index &&
-							typeControl.typedLetters.length <= actualPrase[actualPrase.length - 1].index;
+							const isSelected =
+								typeControl.typedLetters.length >= actualPrase[0].index &&
+								typeControl.typedLetters.length <= actualPrase[actualPrase.length - 1].index;
 
-						return (
-							<div
-								key={`prase ${index}`}
-								id={isSelected ? 'selected' : ''}
-								className={cn('flex rounded-md py-2', {
-									'border-t border-white': isSelected,
-								})}>
-								{actualPrase.map((praseLetter) => (
-									<LetterCard key={praseLetter.index} praseLetter={praseLetter} typeControl={typeControl} />
-								))}
-							</div>
-						);
-					}
-				})}
+							return (
+								<div
+									key={`prase ${index}`}
+									id={isSelected ? 'selected' : ''}
+									className={cn('flex rounded-md py-2 select-none', {
+										'border-t border-white': isSelected,
+									})}>
+									{actualPrase.map((praseLetter) => (
+										<LetterCard key={praseLetter.index} praseLetter={praseLetter} typeControl={typeControl} />
+									))}
+								</div>
+							);
+						}
+					})}
+				</div>
 			</div>
-			<span>{typeControl?.typedLetters.map((letter, index) => <span key={index}>{letter}</span>)}</span>
-		</div>
+			<button
+				onClick={(event) => {
+					typeControl?.setLetters(2);
+					event.currentTarget.blur();
+				}}
+				className='py-2 px-6 border border-white rounded-md hover:bg-white/20 active:bg-white/10 transition-colors select-none'>
+				Reset
+			</button>
+		</>
 	);
 }

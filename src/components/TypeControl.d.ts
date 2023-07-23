@@ -1,5 +1,5 @@
 type TypeControl = {
 	letters: string[];
-	setLetters: Dispatch<SetStateAction<string[]>>;
+	setLetters: (number?: number) => void;
 	typedLetters: string[];
 };
