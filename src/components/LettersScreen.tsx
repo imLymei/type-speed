@@ -4,7 +4,7 @@ import cn from '@/utils/cn';
 import { TypeContext } from '@/utils/contexts';
 import { useContext, useEffect, useRef, useState } from 'react';
 import LetterCard from './letterScreen/LetterCard';
-import { useWindowSize } from 'lymei-hooks';
+import { useWindowSize } from '@lymei/hooks';
 
 export default function LettersScreen() {
 	const [diference, setDiference] = useState(0);
