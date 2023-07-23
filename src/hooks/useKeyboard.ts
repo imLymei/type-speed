@@ -5,7 +5,6 @@ export default function useKeyboard() {
 
 	useEffect(() => {
 		function handleType(event: KeyboardEvent) {
-			console.log(event);
 			setTypedLetters((prev) => {
 				if (event.key.length === 1) return [...prev, event.key];
 				else {
