@@ -36,7 +36,7 @@ export default function TypeProvider({ children }: { children: React.ReactNode }
 
 		setCorrect(total);
 
-		setAccuracy(total != 0 ? Math.floor((total / typedLetters.length) * 10000) / 100 : 100);
+		setAccuracy(total != 0 ? Math.floor((total / typedLetters.length) * 10000) / 10000 : 0);
 	}, [typedLetters, letters]);
 
 	const typeControl: TypeControl = {

@@ -12,9 +12,9 @@ export default function Percentage() {
 	let isTierB;
 
 	if (typeControl) {
-		isTierS = typeControl?.accuracy >= 80;
-		isTierA = typeControl?.accuracy < 80 && typeControl?.accuracy >= 40;
-		isTierB = typeControl?.accuracy < 40;
+		isTierS = typeControl?.accuracy >= 0.8;
+		isTierA = typeControl?.accuracy < 0.8 && typeControl?.accuracy >= 0.4;
+		isTierB = typeControl?.accuracy < 0.4;
 	}
 
 	// const total = typeControl?.letters.reduce((total, actualLetter, index) => {
@@ -33,10 +33,12 @@ export default function Percentage() {
 					'text-yellow-500': isTierA,
 					'text-red-500': isTierB,
 				})}>
-				Accuracy: {`${typeControl?.accuracy}%`}
+				Accuracy: {`${typeControl?.accuracy ? Math.floor(typeControl?.accuracy * 10000) / 100 : 0}%`}
 			</p>
-			<p className='text-green-500'>Correct: {`${typeControl?.typedCorrect}`}</p>
-			<p>Total: {`${typeControl?.letters.length}`}</p>
+			<p className='text-yellow-500'>Correct: {`${typeControl?.typedCorrect}`}</p>
+			<p className='text-yellow-500'>
+				Total: {`${typeControl?.typedLetters.length}`}/{`${typeControl?.letters.length}`}
+			</p>
 		</div>
 	);
 }

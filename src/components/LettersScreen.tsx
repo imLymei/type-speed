@@ -65,6 +65,14 @@ export default function LettersScreen() {
 					})}
 				</div>
 			</div>
+			<div
+				className='h-px w-full bg-yellow-500 origin-left transition-all'
+				style={{
+					transform: `scale(${
+						typeControl ? typeControl.typedLetters.length / typeControl.letters.length : 0
+					}, 1)`,
+				}}
+			/>
 			<button
 				onClick={(event) => {
 					typeControl?.setLetters(20);
