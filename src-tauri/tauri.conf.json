@@ -63,11 +63,11 @@
 		},
 		"windows": [
 			{
-				"fullscreen": false,
+				"fullscreen": true,
 				"height": 600,
 				"resizable": true,
 				"title": "FasType",
-				"width": 800
+				"width": 1000
 			}
 		]
 	}

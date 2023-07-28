@@ -8,6 +8,7 @@ export default function Footer() {
 				imLymei
 			</Link>
 			©2023
+			<p className='absolute right-4'>v0.1.2</p>
 		</div>
 	);
 }
