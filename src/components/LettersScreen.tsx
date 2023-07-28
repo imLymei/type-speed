@@ -31,7 +31,7 @@ export default function LettersScreen() {
 
 	return (
 		<>
-			<div className='flex flex-col gap-2 lg:w-[60vw] h-[400px] overflow-hidden'>
+			<div className='relative flex flex-col gap-2 lg:w-[60vw] h-[400px] overflow-hidden'>
 				<div
 					className='flex flex-wrap text-2xl gap-y-5 transition-all'
 					ref={main}

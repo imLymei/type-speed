@@ -1,0 +1,74 @@
+{
+	"$schema": "../node_modules/@tauri-apps/cli/schema.json",
+	"build": {
+		"beforeBuildCommand": "npm run build",
+		"beforeDevCommand": "npm run dev",
+		"devPath": "http://localhost:3000",
+		"distDir": "../out"
+	},
+	"package": {
+		"productName": "FasType",
+		"version": "0.1.0"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false
+		},
+		"bundle": {
+			"active": true,
+			"category": "DeveloperTool",
+			"copyright": "",
+			"deb": {
+				"depends": []
+			},
+			"externalBin": [],
+			"icon": [
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
+			],
+			"identifier": "com.fastype.dev",
+			"longDescription": "",
+			"macOS": {
+				"entitlements": null,
+				"exceptionDomain": "",
+				"frameworks": [],
+				"providerShortName": null,
+				"signingIdentity": null
+			},
+			"resources": [],
+			"shortDescription": "",
+			"targets": "all",
+			"windows": {
+				"certificateThumbprint": null,
+				"digestAlgorithm": "sha256",
+				"timestampUrl": ""
+			}
+		},
+		"security": {
+			"csp": null
+		},
+		"updater": {
+			"active": true,
+			"endpoints": [
+				"https://gist.githubusercontent.com/imLymei/23b1d3ff0b4b60bb9cdb7ebd60e3d5e0/raw/version.json"
+			],
+			"dialog": true,
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEQ0N0NFQUZBMDVENEU3NkYKUldSdjU5UUYrdXA4MU5ScEIzUmNMS0pqb3BDbWJRbGZYdkx1Y0NIR0oyU0drM0xBbXptRG1NUHkK",
+			"windows": {
+				"installMode": "basicUi"
+			}
+		},
+		"windows": [
+			{
+				"fullscreen": false,
+				"height": 600,
+				"resizable": true,
+				"title": "FasType",
+				"width": 800
+			}
+		]
+	}
+}
