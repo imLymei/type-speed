@@ -1,5 +1,5 @@
 [package]
-name = "fastype"
+name = "app"
 version = "0.2.0"
 description =           "A Type Trainer With Random English Words"
 authors = ["Felipe Cardoso (imLymei)"]
