@@ -10,7 +10,7 @@ export default function Footer() {
 				</Link>
 				©2023
 			</p>
-			<p className='absolute right-4'>v0.1.3</p>
+			<p className='absolute right-4'>v0.2.0</p>
 		</div>
 	);
 }
