@@ -67,11 +67,12 @@
 		},
 		"windows": [
 			{
-				"fullscreen": true,
-				"height": 600,
-				"resizable": true,
 				"title": "FasType",
-				"width": 1000
+				"resizable": true,
+				"width": 1100,
+				"minWidth": 1100,
+				"height": 780,
+				"minHeight": 780
 			}
 		]
 	}

@@ -15,8 +15,6 @@ export default function LetterCard({
 	const isAfter = typeControl.typedLetters.length < praseLetter.index;
 	const isActual = typeControl.typedLetters.length === praseLetter.index;
 
-	const isTyped = typeControl.typedLetters.length - 1 === praseLetter.index;
-
 	return (
 		<div
 			className={cn(
